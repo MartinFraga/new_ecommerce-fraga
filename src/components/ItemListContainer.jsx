@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import customFetch from "../utils/customFetch";
+import { customFetch } from "../utils/customFetch";
 import ItemList from "./ItemList";
 import { products } from "../utils/products";
 

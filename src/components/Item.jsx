@@ -4,10 +4,14 @@ import React from "react";
 
 const Item = (props) => {
   return (
-    <div>
-      <h4>{props.elem.title}</h4>
-      <h5>{props.elem.price}</h5>
-      <img src={props.elem.pictureUrl} alt={props.elem.title} />
+    <div className="col-4">
+      <h4 className="text-center">{props.elem.title}</h4>
+      <img
+        className="img-responsive center-block d-block mx-auto"
+        src={props.elem.pictureUrl}
+        alt={props.elem.title}
+      />
+      <h5 className="text-center">AR$ {props.elem.price}</h5>
     </div>
   );
 };
