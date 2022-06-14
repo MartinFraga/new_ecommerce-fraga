@@ -1,11 +1,18 @@
-import React from "react";
-import ItemCount from "./ItemCount";
+import React, { useEffect, useState } from "react";
+import customFetch from "../utils/customFetch";
+import ItemList from "./ItemList";
+import { products } from "../utils/products";
 
 const ItemListContainer = (props) => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    customFetch(3000, products).then((resultado) => setItems(resultado));
+  }, [items]);
+
   return (
     <>
-      <h6>{props.greeting}</h6>
-      <ItemCount stock={5} initial={1} onAdd={() => {}} />
+      <ItemList products={items} />
     </>
   );
 };
