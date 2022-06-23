@@ -12,7 +12,7 @@ const ItemListContainer = (props) => {
 
   useEffect(() => {
     if (!category) {
-      customFetch(1000, products).then((resultado) => setItems(resultado));
+      customFetch(1500, products).then((resultado) => setItems(resultado));
     } else {
       customFetchCategory(1000, products, category).then((resultado) =>
         setItems(resultado)

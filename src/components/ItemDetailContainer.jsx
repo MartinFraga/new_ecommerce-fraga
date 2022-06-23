@@ -10,7 +10,7 @@ const ItemDetailContainer = (props) => {
   const { productId } = useParams();
 
   useEffect(() => {
-    customFetchDetail(3000, products, productId).then((resultado) =>
+    customFetchDetail(1500, products, productId).then((resultado) =>
       setItem(resultado)
     );
   }, [productId]);

@@ -31,6 +31,7 @@ const ItemCount = (props) => {
         <button
           className="btn btn-primary btn mx-3
         "
+          onClick={() => props.quantity(count)}
         >
           Confirmar
         </button>
