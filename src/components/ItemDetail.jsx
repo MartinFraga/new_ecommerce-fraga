@@ -1,13 +1,18 @@
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import { createRoutesFromChildren, Link } from "react-router-dom";
+import { CartContex } from "../context/CartContex";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = (props) => {
   const [countToCart, setCounToCart] = useState(0);
 
+  const { addItem } = useContext(CartContex);
+
   const quantity = (count) => {
     setCounToCart(count);
+    addItem(props.product, count);
   };
 
   return (
