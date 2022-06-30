@@ -2,7 +2,11 @@ import React, { useContext } from "react";
 import { CartContex } from "../context/CartContex";
 
 const Cart = () => {
-  const { cart, clearCart, deleteItem } = useContext(CartContex);
+  const { cart, clearCart, deleteItem, priceCalc } = useContext(CartContex);
+
+  if (priceCalc() === 0) {
+    return <h4>Su cart está vacío</h4>;
+  }
 
   return (
     <div>
@@ -14,6 +18,8 @@ const Cart = () => {
         </div>
       ))}
       <button onClick={clearCart}>Vaciar Cart</button>
+
+      <h4>Valor Total de su pedido AR$ {priceCalc()}</h4>
     </div>
   );
 };

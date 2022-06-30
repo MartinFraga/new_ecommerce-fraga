@@ -34,8 +34,17 @@ const CartContexProvider = ({ children }) => {
 
   const clearCart = () => setCart([]);
 
+  // Agrupadores de Cantidad y Precio Totales.
+  const quantityCalc = () =>
+    cart.reduce((prev, current) => prev + current.cantidad, 0);
+
+  const priceCalc = () =>
+    cart.reduce((prev, current) => prev + current.cantidad * current.price, 0);
+
   return (
-    <CartContex.Provider value={{ cart, addItem, clearCart, deleteItem }}>
+    <CartContex.Provider
+      value={{ cart, addItem, clearCart, deleteItem, quantityCalc, priceCalc }}
+    >
       {children}
     </CartContex.Provider>
   );
